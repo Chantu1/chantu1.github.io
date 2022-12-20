@@ -9,10 +9,11 @@ body {
     display: flex;
     flex-direction: column;
     font-family: 'Roboto', sans-serif;
+    
 }
 
 h1 {
-    font-size: 50px;
+    font-size: 40px;
 }
 
 p {
@@ -24,12 +25,13 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100px;
+    height: 150px;
     padding-left: 25px;
     padding-right: 25px;
     background-color: black;
     color: white;
     border-radius: 0px 0px 15px 15px;
+    flex-wrap: wrap;
 }
 
 .content {
@@ -49,7 +51,7 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100px;
+    height: 150px;
     background-color: black;
     border-radius: 15px 15px 0px 0px;
 }
