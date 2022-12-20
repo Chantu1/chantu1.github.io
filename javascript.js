@@ -7,35 +7,35 @@ function getComputerChoice() {
 let playerScore = 0;
 let enemyScore = 0;
 let playerSelection;
-let computerSelection = getComputerChoice();
 function playRound(playerSelection, computerSelection) {
+    computerSelection = getComputerChoice();
     playerSelection = prompt("What do you choose?").toLowerCase();
     if (playerSelection === computerSelection) {
         alert("It was a tie");
     }
-    else if (playerSelection == "rock"){
-        if(computerSelection == "paper"){
+    else if (playerSelection == "rock") {
+        if (computerSelection == "paper") {
             alert("Computer Won")
             enemyScore++;
-        }else{
+        } else {
             alert("You Won")
             playerScore++;
         }
     }
-    else if (playerSelection == "scissors"){
-        if(computerSelection == "rock"){
+    else if (playerSelection == "scissors") {
+        if (computerSelection == "rock") {
             alert("Computer Won")
             enemyScore++;
-        }else{
+        } else {
             alert("You Won")
             playerScore++;
         }
     }
-    else if (playerSelection == "paper"){
-        if(computerSelection == "scissors"){
+    else if (playerSelection == "paper") {
+        if (computerSelection == "scissors") {
             alert("Computer Won")
             enemyScore++;
-        }else{
+        } else {
             alert("You Won")
             playerScore++;
         }
@@ -43,8 +43,17 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
-    for (let i = 0; i < 5; i++) {
+    let i = 0;
+    do {
+        i++;
+        if (i === 5) continue;
         playRound();
-        computerSelection = getComputerChoice();
+    } while (playerScore < 5 && enemyScore < 5);
+     if (playerScore > enemyScore) {
+        alert("You win! You have " + playerScore + " points! " + "Enemy has " + enemyScore + " points.");
+     } else {
+        alert("You lost. You have " + playerScore + " points. " + "Enemy has " + enemyScore + " points.");
      }
+     playerScore = 0;
+     enemyScore = 0;
 }
