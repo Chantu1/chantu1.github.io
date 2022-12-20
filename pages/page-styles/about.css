@@ -7,10 +7,9 @@
 body {
     height: 100vh;
     display: flex;
+    flex-direction: column;
     font-family: 'Roboto', sans-serif;
-    justify-content: space-evenly;
     background-color: white;
-    flex-wrap: wrap;
 }
 
 p {
@@ -25,17 +24,17 @@ h1 {
 .header {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     background-color: white;
     color: black;
+    height: 150px;
 }
 
 .content {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    align-items: flex-end;
+    align-items: center;
     flex-wrap: wrap;
     margin-top: 25px;
     margin-bottom: 25px;
