@@ -43,6 +43,7 @@ h1 {
 
 .container {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     margin-top: 25px;
     border: 5px solid black;
@@ -59,6 +60,6 @@ h1 {
 .container img {
     object-fit: fill;
     height: 450px;
-    width: 450px;
+    width: 500px;
     background-color: white;
 }
