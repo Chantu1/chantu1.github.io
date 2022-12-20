@@ -1,24 +1,50 @@
 
-let computerChoice = getComputerChoice();
-let userChoice = prompt("What do you choose");
-
 function getComputerChoice() {
-    const CHOICES = ["Rock", "Paper", "Scissors"];
+    const CHOICES = ["rock", "paper", "scissors"];
     let random = CHOICES[Math.floor(Math.random() * CHOICES.length)];
     return random;
 }
-
-if (userChoice === "Rock" && computerChoice === "Rock") {
-    alert("ITS A TIE");
-    computerChoice = getComputerChoice;
-} else if (userChoice === "Rock" && computerChoice === "Paper") {
-    alert("COMPUTER WINS")
-    computerChoice = getComputerChoice;
-} else if (userChoice === "Rock" && computerChoice === "Scissors") {
-    alert("YOU WIN")
-    computerChoice = getComputerChoice;
+let playerScore = 0;
+let enemyScore = 0;
+let playerSelection;
+let computerSelection = getComputerChoice();
+function playRound(playerSelection, computerSelection) {
+    playerSelection = prompt("What do you choose?").toLowerCase();
+    if (playerSelection === computerSelection) {
+        alert("It was a tie");
+    }
+    else if (playerSelection == "rock"){
+        if(computerSelection == "paper"){
+            alert("Computer Won")
+            enemyScore++;
+        }else{
+            alert("You Won")
+            playerScore++;
+        }
+    }
+    else if (playerSelection == "scissors"){
+        if(computerSelection == "rock"){
+            alert("Computer Won")
+            enemyScore++;
+        }else{
+            alert("You Won")
+            playerScore++;
+        }
+    }
+    else if (playerSelection == "paper"){
+        if(computerSelection == "scissors"){
+            alert("Computer Won")
+            enemyScore++;
+        }else{
+            alert("You Won")
+            playerScore++;
+        }
+    }
 }
 
-function rockPaperScissors(playerSelection, computerSelection) {
-    
+function game() {
+    for (let i = 0; i < 5; i++) {
+        playRound();
+        computerSelection = getComputerChoice();
+     }
 }
