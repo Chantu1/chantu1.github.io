@@ -5,7 +5,6 @@
 }
 
 body {
-    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,12 +29,16 @@ h1 {
     align-items: center;
     background-color: white;
     color: black;
-    height: 150px;
     margin-top: 25px;
     padding: 15px;
     text-shadow: 2px 2px 5px gray;
-    border-radius: 15px;
     box-shadow: 10px 10px;
+}
+
+.header:hover {
+    background-color: black;
+    color: white;
+    transition: 0.5s;
 }
 
 .content {
@@ -50,25 +53,41 @@ h1 {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 25px;
-    box-shadow: 10px 10px;
-    border-radius: 15px;
+    margin-top: 25px;
 }
 
 .container p {
-    height: 420px;
-    width: 400px;
     background-color: white;
     color: black;
     padding: 15px;
-    border-radius: 15px 0px 0px 15px;
     text-shadow: 2px 2px 5px gray;
+    flex-basis: 420px;
+    box-shadow: 10px 10px;
 }
 
-.container img {
+.container p:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+    border-radius: 15px;
+    box-shadow: none;
+}
+
+.container .img-container {
     object-fit: fill;
-    height: 450px;
-    width: 500px;
     border-radius: 0px 15px 15px 0px;
     background-color: white;
+    flex-basis: 450px;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    box-shadow: 10px 10px;
+}
+
+.img-container img:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+    border-radius: 15px;
+    box-shadow: none;
 }

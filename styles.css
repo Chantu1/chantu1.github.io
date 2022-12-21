@@ -35,9 +35,15 @@ p {
 
 .content {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
+}
+
+.content img {
+    width: 200px;
+    height: 200px;
 }
 
 .content-header {
@@ -80,9 +86,3 @@ a {
 a:hover {
     color: #9e9e9e;
 }
-
-/*.test-image {
-    height: 100px;
-    width: 100px;
-    border: 1px solid black;
-}*/
