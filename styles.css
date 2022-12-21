@@ -17,16 +17,14 @@ h1 {
 
 p {
     font-size: 26px;
-    color: #9e9e9e;
+    color: black;
 }
 
 .header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     height: 150px;
-    padding-left: 40px;
-    padding-right: 40px;
     flex-wrap: wrap;
 }
 
@@ -47,6 +45,11 @@ p {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+}
+
+.content-header h1 {
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .footer {

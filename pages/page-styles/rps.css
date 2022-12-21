@@ -7,6 +7,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    background: linear-gradient(320deg, #00a1ff, #00ff8f);
 }
 
 p {
@@ -29,12 +30,15 @@ p {
 .options {
     display: flex;
     justify-content: center;
+    align-self: center;
+    gap: 25px;
     flex-wrap: wrap;
+    box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1);
+    border-radius: 25px;
+    padding: 25px;
 }
 
-.options div {
-    background-color: black;
-    height: 150px;
-    width: 150px;
-    margin: 25px;
+.options button {
+    width: 160px;
+    height: 160px;
 }
