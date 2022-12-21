@@ -60,19 +60,6 @@ p {
     color: black;
 }
 
-button {
-    padding: 5px;
-    border-radius: 15px;
-    font-weight: bolder;
-    background-color: white;
-}
-
-button:hover {
-    background-color: black;
-    color: white;
-    transition: 0.3s;
-}
-
 a {
     color: black;
     text-decoration: none;
@@ -81,4 +68,18 @@ a {
 a:hover {
     color: red;
     transition: 0.5s;
+}
+
+.content-header a {
+    color: black;
+    border: 3px solid black;
+    padding: 5px;
+    border-radius: 25px;
+    font-weight: bolder;
+}
+
+.content-header a:hover {
+    color: white;
+    background-color: black;
+    transition: 0.3s;
 }
