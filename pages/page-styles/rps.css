@@ -22,8 +22,6 @@ h2 {
 
 p {
     font-size: 26px;
-    color: black;
-    padding: 25px;
 }
 
 .header {
@@ -32,9 +30,10 @@ p {
     justify-content: center;
     text-align: center;
     box-shadow: 10px 10px;
-    text-shadow: 2px 2px 5px gray;
     background-color: white;
     margin-top: 25px;
+    margin-bottom: 25px;
+    padding: 15px;
 }
 
 .info-box {
