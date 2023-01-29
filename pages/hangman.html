@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman</title>
+    <link href="../styles.css" rel="stylesheet">
+</head>
+<body class="hangman-html">
+    <div class="hangman-header">
+        <h1>Hangman</h1>
+        <p><a href="../index.html">Home</a></p>
+    </div>
+    <img id="hangman-img" src="../images/hangman/hangman0.png" height="200px" width="200px">
+    <div class="hangman-form">
+        <input class="hangman-input" autocomplete="off" id="word-input" type="text">
+        <button class="hangman-guess" id="guessbtn" onclick="getInputValue();" type="submit">Guess</button>
+    </div>
+    <h1 id="word-info"></h1>
+    <p id="win-info"></p>
+    <button hidden id="playagain" onclick="handleReset();">Play Again</button>
+    <script src="../hangman.js"></script>
+</body>
+</html>
