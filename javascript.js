@@ -23,10 +23,8 @@ const enemyScoring = document.getElementById("enemyScore");
 const roundNum = document.getElementById("currentRound");
 const enemySelection = document.getElementById("enemySelection");
 const RESETBUTTON = document.getElementById("resetGame");
-const TROPHY = document.getElementById("winnerImage");
 
 ROCK.addEventListener("click", function() {
-    TROPHY.hidden = true;
     enemySelection.hidden = false;
     playerSelect = "rock";
     playRound(playerSelect)
@@ -38,7 +36,6 @@ ROCK.addEventListener("click", function() {
     handleRestart()
 });
 PAPER.addEventListener("click", function() {
-    TROPHY.hidden = true;
     enemySelection.hidden = false;
     playerSelect = "paper";
     playRound(playerSelect)
@@ -50,7 +47,6 @@ PAPER.addEventListener("click", function() {
     handleRestart()
 });
 SCISSORS.addEventListener("click", function() {
-    TROPHY.hidden = true;
     enemySelection.hidden = false;
     playerSelect = "scissors";
     playRound(playerSelect)
@@ -73,7 +69,6 @@ RESETBUTTON.addEventListener("click", function() {
     enemySelection.hidden = true;
     enemySelection.innerHTML = "Enemy: ";
     roundWinner.innerHTML = "Round Winner: ";
-    TROPHY.hidden = true;
 });
 
 
@@ -145,7 +140,6 @@ function handleRestart() {
     {
         roundWinner.innerHTML = "YOU WIN!";
         enemySelection.hidden = true;
-        TROPHY.hidden = false;
     }
     if (enemyScore == 5)
     {

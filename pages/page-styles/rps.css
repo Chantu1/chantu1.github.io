@@ -7,7 +7,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
 }
 
 .header {
@@ -57,15 +56,22 @@ p {
 
 .info-box {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
     flex-wrap: wrap;
-    gap: 40px;
+    gap:25px;
 }
 
 .info-box p {
     /*border: 5px solid black;*/
     padding: 15px;
     border-radius: 5px;
+}
+
+.gameScores {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
 }
 
 #playerScore {
