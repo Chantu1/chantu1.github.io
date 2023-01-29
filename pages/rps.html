@@ -12,21 +12,24 @@
         <h1>Rock Paper Scissors</h1>
         <p><a href="../index.html">Home</a></p>
     </div>
-    <div class="info-box">
-        <p id="playerScore">Your Score 0</p>
-        <p id="enemyScore">Enemy Score 0</p>
-        <p id="currentRound">Round 0</p>
-    </div>
-    <div class="options">
-        <div class="gameButtons">
-            <button class="gamebutton" id="rock" value="rock">Rock</button>
-            <button class="gamebutton" id="paper" value="paper">Paper</button>
-            <button class="gamebutton" id="scissors" value="scissors">Scissors</button>
+    <div class="rps-container">
+        <div class="info-box">
+            <p id="playerScore">Your Score 0/5</p>
+            <p id="enemyScore">Enemy Score 0/5</p>
+            <p id="currentRound">Round 0</p>
         </div>
-        <button id="resetGame">Reset</button>
+        <div class="options">
+            <div class="gameButtons">
+                <button class="gamebutton btn-blue" id="rock" value="rock"><div class="sign">&#9994;</div></button>
+                <button class="gamebutton btn-blue" id="paper" value="paper"><div class="sign">&#9995;</div></button>
+                <button class="gamebutton btn-blue" id="scissors" value="scissors"><div class="sign">&#9996;</div></button>
+            </div>
+            <button class="btn-reset" id="resetGame">Reset</button>
+        </div>
+        <h1 id="roundwinner" hidden>Round Winner: </h1>
+        <h1 id="enemySelection" hidden>Enemy: </h1>
+        <img hidden id="winnerImage" src="../images/trophy.png">
+        <script src="/javascript.js"></script>
     </div>
-    <h1 id="roundwinner">Round Winner: </h1>
-    <h2 id="enemySelection">Enemy: </h2>
-    <script src="../javascript.js"></script>
 </body>
 </html>

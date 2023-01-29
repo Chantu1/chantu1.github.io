@@ -23,32 +23,42 @@ const enemyScoring = document.getElementById("enemyScore");
 const roundNum = document.getElementById("currentRound");
 const enemySelection = document.getElementById("enemySelection");
 const RESETBUTTON = document.getElementById("resetGame");
+const TROPHY = document.getElementById("winnerImage");
 
 ROCK.addEventListener("click", function() {
+    TROPHY.hidden = true;
+    enemySelection.hidden = false;
     playerSelect = "rock";
     playRound(playerSelect)
-    playerScoring.innerHTML = "Your Score " + playerScore;
-    enemyScoring.innerHTML = "Enemy Score " + enemyScore;
+    playerScoring.innerHTML = "Your Score " + playerScore + "/5";
+    enemyScoring.innerHTML = "Enemy Score " + enemyScore + "/5";
     roundNum.innerHTML = "Round " + currentRound;
-    enemySelection.innerHTML = "Enemy: " + computerSelection.toUpperCase();
+    roundWinner.hidden = false;
+    handleEnemy(computerSelection)
     handleRestart()
 });
 PAPER.addEventListener("click", function() {
+    TROPHY.hidden = true;
+    enemySelection.hidden = false;
     playerSelect = "paper";
     playRound(playerSelect)
-    playerScoring.innerHTML = "Your Score " + playerScore;
-    enemyScoring.innerHTML = "Enemy Score " + enemyScore;
+    playerScoring.innerHTML = "Your Score " + playerScore + "/5";
+    enemyScoring.innerHTML = "Enemy Score " + enemyScore + "/5";
     roundNum.innerHTML = "Round " + currentRound;
-    enemySelection.innerHTML = "Enemy: " + computerSelection.toUpperCase();
+    roundWinner.hidden = false;
+    handleEnemy(computerSelection)
     handleRestart()
 });
 SCISSORS.addEventListener("click", function() {
+    TROPHY.hidden = true;
+    enemySelection.hidden = false;
     playerSelect = "scissors";
     playRound(playerSelect)
-    playerScoring.innerHTML = "Your Score " + playerScore;
-    enemyScoring.innerHTML = "Enemy Score " + enemyScore;
+    playerScoring.innerHTML = "Your Score " + playerScore + "/5";
+    enemyScoring.innerHTML = "Enemy Score " + enemyScore + "/5";
     roundNum.innerHTML = "Round " + currentRound;
-    enemySelection.innerHTML = "Enemy: " + computerSelection.toUpperCase();
+    roundWinner.hidden = false;
+    handleEnemy(computerSelection)
     handleRestart()
 });
 
@@ -56,11 +66,14 @@ RESETBUTTON.addEventListener("click", function() {
     playerScore = 0;
     enemyScore = 0;
     currentRound = 0;
-    playerScoring.innerHTML = "Your Score " + playerScore;
-    enemyScoring.innerHTML = "Enemy Score " + enemyScore;
+    playerScoring.innerHTML = "Your Score " + playerScore + "/5";
+    enemyScoring.innerHTML = "Enemy Score " + enemyScore + "/5";
     roundNum.innerHTML = "Round " + currentRound;
+    roundWinner.hidden = true;
+    enemySelection.hidden = true;
     enemySelection.innerHTML = "Enemy: ";
     roundWinner.innerHTML = "Round Winner: ";
+    TROPHY.hidden = true;
 });
 
 
@@ -108,6 +121,21 @@ function playRound(playerSelection) {
     currentRound++;
 }
 
+function handleEnemy(enemy) {
+    if (computerSelection == "rock")
+    {
+        enemySelection.innerHTML = "Enemy: " + "&#9994";
+    }
+    else if (computerSelection == "paper")
+    {
+        enemySelection.innerHTML = "Enemy: " + "&#9995";
+    }
+    else if (computerSelection == "scissors")
+    {
+        enemySelection.innerHTML = "Enemy: " + "&#9996";
+    }
+}
+
 function handleWinner(winner) {
     roundWinner.innerHTML = "Round Winner: " + winner;
 }
@@ -115,11 +143,14 @@ function handleWinner(winner) {
 function handleRestart() {
     if (playerScore == 5)
     {
-        alert("You win!")
+        roundWinner.innerHTML = "YOU WIN!";
+        enemySelection.hidden = true;
+        TROPHY.hidden = false;
     }
     if (enemyScore == 5)
     {
-        alert("Enemy wins.")
+        roundWinner.innerHTML = "You lose.";
+        enemySelection.hidden = true;
     }
     if (playerScore == 5 || enemyScore == 5)
     {
