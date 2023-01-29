@@ -1,0 +1,23 @@
+.number-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.guessbtn {
+    margin-bottom: 16px;
+}
+
+#hint-box {
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
