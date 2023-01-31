@@ -13,15 +13,10 @@
             <a href="../index.html">Home</a>
             <h1>DOM Manipulation</h1>
             <p>Inspect element and you will see a class called mainer-content, select the drop down arrow and look at the div with an id container, in there you will see a bunch of divs, every single div in there is 1 pixel.</p>
+            <p>Tip - Do not leave the color on rainbow, it infinitely loops in the background, not sure how many resources that takes up. When you're done using rainbow just select a color from the list and it will stop.</p>
         </header>
         <!--<p id="input-text">100</p>-->
         <!--<input autocomplete="off" id="input-value" min="500" max="5000" step="2500" type="range" value="100">-->
-        <button id="resetbtn">Reset Canvas</button>
-        <select autocomplete="off" id="input-value" selected="selected">
-            <option selected value="500">500</option>
-            <option value="2500">2500</option>
-            <option value="10000">10000</option>
-        </select>
         <div class="mainer-content">
             <div>
                 <div class="color-picker">
@@ -37,6 +32,23 @@
                 </div>
             </div>
             <div id="container"></div>
+            <div id="settings">
+                    <label>Settings</label>
+                    <div>
+                        <button id="resetbtn">Reset Canvas</button>
+                        <select autocomplete="off" id="input-value" selected="selected">
+                            <option selected value="500">Small</option>
+                            <option value="2500">Medium</option>
+                            <option value="10000">Large</option>
+                        </select>
+                    </div>
+                    <label>Custom Colors</label>
+                    <div>
+                        <button id="rainbow">Rainbow</button>
+                        <button id="shaders">Temp Button</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>

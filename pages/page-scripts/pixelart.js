@@ -2,6 +2,14 @@ const container = document.querySelector("#container");
 const COLORCLASSES = document.getElementsByClassName('color');
 const RESETBTN = document.getElementById('resetbtn');
 const ARTBOXES = document.getElementsByClassName('pixel');
+const RAINBOWBTN = document.getElementById('rainbow');
+
+// Button for rainbow
+let rainbowMode = false;
+const rainbowColors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+let breakMe = false;
+
+let currentColorId = COLORCLASSES[0];
 
 // Set color to black by default
 let color = 'black';
@@ -43,6 +51,20 @@ container.addEventListener("mouseleave", function() {
   isMouseDown = false;
 });
 
+// Adds the color-chosen class to the colors for the user to visualize which color is selected
+for (let i = 0; i < COLORCLASSES.length; i++)
+{
+    COLORCLASSES[i].addEventListener('click', function() {
+        breakMe = true;
+        color = COLORCLASSES[i].id;
+        currentColorId = COLORCLASSES[i];
+        //console.log(color);
+        removeColorChosen();
+        currentColor = document.getElementById(color);
+        currentColor.classList.add('color-chosen');
+    });
+}
+
 //-----------------------------------------------------------------------------------------------
 const INPUTOPTION = document.querySelector('#input-value');
 //const INPUTVALUE = document.querySelector('#input-text');
@@ -57,6 +79,33 @@ INPUTOPTION.addEventListener('input', function() {
     thisMany = parseInt(INPUTOPTION.value);
     handleGeneration(thisMany);
 });
+
+RAINBOWBTN.addEventListener('click', function() {
+    breakMe = false;
+    rainbowMode = true;
+    activateRainbow();
+    currentColorId.classList.remove('color-chosen');
+});
+
+function activateRainbow()
+{
+    let i = 0;
+    (function loopIt(i) {
+    setTimeout(function(){
+        if (breakMe == true)
+        {
+            return;
+        }
+        color = rainbowColors[i];
+        //console.log(rainbowColors[i]);
+        if (i == 6)
+        {
+            i = 0;
+        }
+        if(i < rainbowColors.length - 1)  loopIt(i+1)
+        }, 5);
+    })(i)
+}
 
 function generateBoxes(size, boxSize) {
     // First delete any children this container might already have
@@ -100,16 +149,6 @@ function handleGeneration(size)
         generateBoxes(size, "boxSize3");
     }
 }
-// Adds the color-chosen class to the colors for the user to visualize which color is selected
-for (let i = 0 ; i < COLORCLASSES.length; i++)
-{
-    COLORCLASSES[i].addEventListener('click', function() {
-        removeColorChosen();
-        color = COLORCLASSES[i].id;
-        currentColor = document.getElementById(color);
-        currentColor.classList.add('color-chosen');
-    });
-}
 
 // Removes the color-chosen class
 function removeColorChosen()
@@ -118,4 +157,9 @@ function removeColorChosen()
     {
         COLORCLASSES[i].classList.remove('color-chosen');
     }
+}
+
+function delay(time)
+{
+    return new Promise(resolve => setTimeout(resolve, time));
 }
