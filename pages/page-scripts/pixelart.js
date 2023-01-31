@@ -2,6 +2,8 @@ const container = document.querySelector("#container");
 const COLORCLASSES = document.getElementsByClassName('color');
 const RESETBTN = document.getElementById('resetbtn');
 const ARTBOXES = document.getElementsByClassName('pixel');
+
+// Set color to black by default
 let color = 'black';
 
 // Set isMouseDown to be false by default
@@ -18,13 +20,14 @@ container.addEventListener("mouseup", function() {
 });
 
 container.addEventListener("mouseover", function(event) {
-    // If mouseover on container and mousedown and the box you are hovering over contains the class 'box', change background to red 
+    // If mouseover on container and mousedown and the box you are hovering over contains the class currentBoxSize, change background to color
   if (isMouseDown && event.target.classList.contains(currentBoxSize)) {
     event.target.style.backgroundColor = color;
   }
 });
 
 container.addEventListener("click", function(event) {
+    // If just clicking on a box change to color
     if (event.target.classList.contains(currentBoxSize)) {
         event.target.style.backgroundColor = color;
       }
@@ -97,7 +100,7 @@ function handleGeneration(size)
         generateBoxes(size, "boxSize3");
     }
 }
-
+// Adds the color-chosen class to the colors for the user to visualize which color is selected
 for (let i = 0 ; i < COLORCLASSES.length; i++)
 {
     COLORCLASSES[i].addEventListener('click', function() {
@@ -108,6 +111,7 @@ for (let i = 0 ; i < COLORCLASSES.length; i++)
     });
 }
 
+// Removes the color-chosen class
 function removeColorChosen()
 {
     for (let i = 0; i < COLORCLASSES.length; i++)
