@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#container {
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    width: 550px;
+    height: 550px;
+    overflow: hidden;
+}
+
+.boxSize1, .boxSize2, .boxSize3 {
+    user-select: none;
+}
+
+.boxSize1 {
+    min-width: 25px;
+    min-height: 25px;
+    flex: 1;
+}
+
+.boxSize2 {
+    min-width: 10px;
+    min-height: 10px;
+    flex: 1;
+}
+
+.boxSize3 {
+    min-width: 5px;
+    min-height: 5px;
+    flex: 1;
+}
+
+/*color-picker*/
+
+.color-picker {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+.color-picker div {
+    min-width: 15px;
+    min-height: 15px;
+    flex: 1;
+    cursor: pointer;
+}
+
+.color-label {
+    padding: 15px;
+    text-align: center;
+}
+
+.color-chosen {
+    border: 3px solid rgba(255,255,255,1);;
+}
+
+#black {
+    background-color: black;
+}
+
+#red {
+    background-color: red;
+}
+
+#orange {
+    background-color: orange;
+}
+
+#yellow {
+    background-color: yellow;
+}
+
+#green {
+    background-color: green;
+}
+
+#blue {
+    background-color: blue;
+}
+
+#indigo {
+    background-color: indigo;
+}
+
+#violet {
+    background-color: violet;
+}
+
+/*input-value*/
+
+select {
+    padding: 1px;
+    border: 2px solid #ccc;
+}
+
+/*header*/
+
+.heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+/*reset button*/
+
+#resetbtn {
+    border-radius: 0px;
+    padding: 1px;
+    box-shadow: none;
+}

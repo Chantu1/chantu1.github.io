@@ -137,3 +137,11 @@ a:hover {
     background-color: rgb(223, 223, 223);
     cursor: pointer;
 }
+
+.heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
