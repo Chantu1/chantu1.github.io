@@ -100,10 +100,11 @@ function activateRainbow()
         //console.log(rainbowColors[i]);
         if (i == 6)
         {
-            i = 0;
+            i = -1;
         }
+        //console.log(i);
         if(i < rainbowColors.length - 1)  loopIt(i+1)
-        }, 5);
+        }, 25);
     })(i)
 }
 
