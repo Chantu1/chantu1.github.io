@@ -1,4 +1,4 @@
-const container = document.querySelector("#container");
+const container = document.querySelector("#art-container");
 const COLORCLASSES = document.getElementsByClassName('color');
 const RESETBTN = document.getElementById('resetbtn');
 const ARTBOXES = document.getElementsByClassName('pixel');
