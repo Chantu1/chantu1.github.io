@@ -8,23 +8,11 @@
     <link rel="stylesheet" href="page-styles/pixelart.css">
 </head>
 <body>
-    <div class="color-picker">
-        <div class="color color-chosen" id="black"></div>
-        <div class="color" id="white"></div>
-        <div class="color" id="red"></div>
-        <div class="color" id="orange"></div>
-        <div class="color" id="yellow"></div>
-        <div class="color" id="green"></div>
-        <div class="color" id="blue"></div>
-        <div class="color" id="indigo"></div>
-        <div class="color" id="violet"></div>
-    </div>
     <div class="main-content">
         <header class="heading">
             <a href="../index.html">Home</a>
             <h1>DOM Manipulation</h1>
-            <p>If you inspect element you will see a bunch of div's created under the id called container.</p>
-            <p>Every single div created is 1 pixel.</p>
+            <p>Inspect element and you will see a class called mainer-content, select the drop down arrow and look at the div with an id container, in there you will see a bunch of divs, every single div in there is 1 pixel.</p>
         </header>
         <!--<p id="input-text">100</p>-->
         <!--<input autocomplete="off" id="input-value" min="500" max="5000" step="2500" type="range" value="100">-->
@@ -34,7 +22,22 @@
             <option value="2500">2500</option>
             <option value="10000">10000</option>
         </select>
-        <div id="container"></div>
+        <div class="mainer-content">
+            <div>
+                <div class="color-picker">
+                    <div class="color color-chosen" id="black"></div>
+                    <div class="color" id="white"></div>
+                    <div class="color" id="red"></div>
+                    <div class="color" id="orange"></div>
+                    <div class="color" id="yellow"></div>
+                    <div class="color" id="green"></div>
+                    <div class="color" id="blue"></div>
+                    <div class="color" id="indigo"></div>
+                    <div class="color" id="violet"></div>
+                </div>
+            </div>
+            <div id="container"></div>
+        </div>
     </div>
 </body>
 <script src="page-scripts/pixelart.js"></script>

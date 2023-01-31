@@ -1,6 +1,7 @@
 const container = document.querySelector("#container");
 const COLORCLASSES = document.getElementsByClassName('color');
 const RESETBTN = document.getElementById('resetbtn');
+const ARTBOXES = document.getElementsByClassName('pixel');
 let color = 'black';
 
 // Set isMouseDown to be false by default
@@ -34,6 +35,10 @@ RESETBTN.addEventListener('click', function() {
     handleGeneration(thisMany);
 });
 
+container.addEventListener("mouseleave", function() {
+    // If mouse is not in the container of all the div elements
+  isMouseDown = false;
+});
 
 //-----------------------------------------------------------------------------------------------
 const INPUTOPTION = document.querySelector('#input-value');
@@ -57,6 +62,8 @@ function generateBoxes(size, boxSize) {
     for (let i = 1; i <= size; i++) {
         const element = document.createElement("div");
         element.classList.add(boxSize);
+        // Add a marker so I can access all the div boxes
+        element.classList.add('pixel');
         container.appendChild(element);
     }
     currentBoxSize = boxSize;
