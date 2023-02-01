@@ -13,6 +13,7 @@ main {
     justify-content: center;
     align-items: center;
     gap: 15px;
+    flex-wrap: wrap;
 }
 
 #art-container {
@@ -54,6 +55,12 @@ main {
     border: 1px solid black;
     display: flex;
     flex-direction: column;
+}
+
+@media only screen and (max-width: 600px) {
+    .color-picker {
+        flex-direction: row;
+    }
 }
 
 .color-picker div {

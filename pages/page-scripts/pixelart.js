@@ -41,6 +41,32 @@ container.addEventListener("click", function(event) {
       }
 });
 
+// Event listeners for touch screen devices
+container.addEventListener('touchstart', function(event) {
+    event.preventDefault();
+    const touch = event.touches[0];
+    const boxes = container.querySelectorAll('div');
+    Array.from(boxes).forEach(box => {
+        if (touch.clientX >= box.offsetLeft && touch.clientX <= box.offsetLeft + box.offsetWidth && touch.clientY >= box.offsetTop && touch.clientY <= box.offsetTop + box.offsetHeight)
+        {
+            box.style.backgroundColor = color;
+        }
+    })
+});
+
+container.addEventListener("touchmove", function (event) {
+    event.preventDefault();
+    const touch = event.touches[0];
+    const boxes = container.querySelectorAll("div");
+    Array.from(boxes).forEach(box => {
+      if (touch.clientX >= box.offsetLeft && touch.clientX <= box.offsetLeft + box.offsetWidth && touch.clientY >= box.offsetTop && touch.clientY <= box.offsetTop + box.offsetHeight) {
+        box.style.backgroundColor = color;
+      }
+    });
+  });
+  
+
+
 // When reset button is clicked run handleGeneration function
 RESETBTN.addEventListener('click', function() {
     handleGeneration(thisMany);
