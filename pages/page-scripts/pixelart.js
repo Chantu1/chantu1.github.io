@@ -42,17 +42,25 @@ container.addEventListener("click", function(event) {
 });
 
 // Event listeners for touch screen devices
-container.addEventListener('touchstart', function(event) {
+container.addEventListener('touchmove', function(event) {
     event.preventDefault();
     const touch = event.touches[0];
-    const boxes = container.querySelectorAll('div');
+    const boxes = container.querySelectorAll("div:not([style*='display:none'])");
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0;
+    const touchX = touch.clientX - scrollLeft;
+    const touchY = touch.clientY - scrollTop;
     Array.from(boxes).forEach(box => {
-        if (touch.clientX >= box.offsetLeft && touch.clientX <= box.offsetLeft + box.offsetWidth && touch.clientY >= box.offsetTop && touch.clientY <= box.offsetTop + box.offsetHeight)
+        const boxRect = box.getBoundingClientRect();
+        if (touchX >= boxRect.left && touchX <= boxRect.right && touchY >= boxRect.top && touchY <= boxRect.bottom)
         {
             box.style.backgroundColor = color;
         }
     })
 });
+
+
+
 
 container.addEventListener("touchmove", function (event) {
     event.preventDefault();
