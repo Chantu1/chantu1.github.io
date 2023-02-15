@@ -29,16 +29,34 @@ container.addEventListener("mouseup", function() {
 
 container.addEventListener("mouseover", function(event) {
     // If mouseover on container and mousedown and the box you are hovering over contains the class currentBoxSize, change background to color
-  if (isMouseDown && event.target.classList.contains(currentBoxSize)) {
-    event.target.style.backgroundColor = color;
+  if (isMouseDown && event.target.classList.contains(currentBoxSize)) 
+  {
+        if (rainbowMode == true)
+        {
+            color = rainbowColors[getRandomInt(7)];
+            event.target.style.backgroundColor = color;
+        }
+        else
+        {
+            event.target.style.backgroundColor = color;
+        }
   }
 });
 
 container.addEventListener("click", function(event) {
     // If just clicking on a box change to color
-    if (event.target.classList.contains(currentBoxSize)) {
-        event.target.style.backgroundColor = color;
-      }
+    if (event.target.classList.contains(currentBoxSize)) 
+    {
+        if (rainbowMode == true)
+        {
+            color = rainbowColors[getRandomInt(7)];
+            event.target.style.backgroundColor = color;
+        }
+        else
+        {
+            event.target.style.backgroundColor = color;
+        }
+    }
 });
 
 // Event listeners for touch screen devices
@@ -54,7 +72,15 @@ container.addEventListener('touchmove', function(event) {
         const boxRect = box.getBoundingClientRect();
         if (touchX >= boxRect.left && touchX <= boxRect.right && touchY >= boxRect.top && touchY <= boxRect.bottom)
         {
-            box.style.backgroundColor = color;
+            if (rainbowMode == true)
+            {
+                color = rainbowColors[getRandomInt(7)];
+                box.style.backgroundColor = color;
+            }
+            else
+            {
+                box.style.backgroundColor = color;
+            }
         }
     })
 });
@@ -68,7 +94,15 @@ container.addEventListener("touchmove", function (event) {
     const boxes = container.querySelectorAll("div");
     Array.from(boxes).forEach(box => {
       if (touch.clientX >= box.offsetLeft && touch.clientX <= box.offsetLeft + box.offsetWidth && touch.clientY >= box.offsetTop && touch.clientY <= box.offsetTop + box.offsetHeight) {
-        box.style.backgroundColor = color;
+        if (rainbowMode == true)
+        {
+            color = rainbowColors[getRandomInt(7)];
+            box.style.backgroundColor = color;
+        }
+        else
+        {
+            box.style.backgroundColor = color;
+        }
       }
     });
   });
@@ -89,7 +123,7 @@ container.addEventListener("mouseleave", function() {
 for (let i = 0; i < COLORCLASSES.length; i++)
 {
     COLORCLASSES[i].addEventListener('click', function() {
-        breakMe = true;
+        rainbowMode = false;
         color = COLORCLASSES[i].id;
         currentColorId = COLORCLASSES[i];
         //console.log(color);
@@ -115,32 +149,9 @@ INPUTOPTION.addEventListener('input', function() {
 });
 
 RAINBOWBTN.addEventListener('click', function() {
-    breakMe = false;
     rainbowMode = true;
-    activateRainbow();
     currentColorId.classList.remove('color-chosen');
 });
-
-function activateRainbow()
-{
-    let i = 0;
-    (function loopIt(i) {
-    setTimeout(function(){
-        if (breakMe == true)
-        {
-            return;
-        }
-        color = rainbowColors[i];
-        //console.log(rainbowColors[i]);
-        if (i == 6)
-        {
-            i = -1;
-        }
-        //console.log(i);
-        if(i < rainbowColors.length - 1)  loopIt(i+1)
-        }, 25);
-    })(i)
-}
 
 function generateBoxes(size, boxSize) {
     // First delete any children this container might already have
@@ -197,4 +208,9 @@ function removeColorChosen()
 function delay(time)
 {
     return new Promise(resolve => setTimeout(resolve, time));
+}
+
+function getRandomInt(max)
+{
+    return Math.floor(Math.random() * max);
 }
