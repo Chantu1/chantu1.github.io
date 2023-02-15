@@ -7,7 +7,7 @@ const RAINBOWBTN = document.getElementById('rainbow');
 // Button for rainbow
 let rainbowMode = false;
 const rainbowColors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
-let breakMe = false;
+let lastRainbowIndex = -1;
 
 let currentColorId = COLORCLASSES[0];
 
@@ -33,7 +33,7 @@ container.addEventListener("mouseover", function(event) {
   {
         if (rainbowMode == true)
         {
-            color = rainbowColors[getRandomInt(7)];
+            color = rainbowColors[getRainbowIndex()];
             event.target.style.backgroundColor = color;
         }
         else
@@ -49,7 +49,7 @@ container.addEventListener("click", function(event) {
     {
         if (rainbowMode == true)
         {
-            color = rainbowColors[getRandomInt(7)];
+            color = rainbowColors[getRainbowIndex()];
             event.target.style.backgroundColor = color;
         }
         else
@@ -74,7 +74,7 @@ container.addEventListener('touchmove', function(event) {
         {
             if (rainbowMode == true)
             {
-                color = rainbowColors[getRandomInt(7)];
+                color = rainbowColors[getRainbowIndex()];
                 box.style.backgroundColor = color;
             }
             else
@@ -96,7 +96,7 @@ container.addEventListener("touchmove", function (event) {
       if (touch.clientX >= box.offsetLeft && touch.clientX <= box.offsetLeft + box.offsetWidth && touch.clientY >= box.offsetTop && touch.clientY <= box.offsetTop + box.offsetHeight) {
         if (rainbowMode == true)
         {
-            color = rainbowColors[getRandomInt(7)];
+            color = rainbowColors[getRainbowIndex()];
             box.style.backgroundColor = color;
         }
         else
@@ -210,7 +210,16 @@ function delay(time)
     return new Promise(resolve => setTimeout(resolve, time));
 }
 
-function getRandomInt(max)
+function getRainbowIndex()
 {
-    return Math.floor(Math.random() * max);
+    lastRainbowIndex += 1;
+    if (lastRainbowIndex >= 7)
+    {
+        lastRainbowIndex = 0;
+        return lastRainbowIndex;
+    }
+    else
+    {
+        return lastRainbowIndex;
+    }
 }
