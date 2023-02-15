@@ -17,7 +17,7 @@ let wrongCounter = 0;
 let guessedLetters;
 
 setWord();
-
+checkImage();
 // Event Listener for when guess button is clicked
 function getInputValue()
 {
@@ -124,6 +124,7 @@ function handleReset()
 {
     if (isWon == true)
     {
+        checkImage();
         hangmanWord = randomWord();
         clearArray(guessedLetters);
         setWord();
@@ -165,6 +166,7 @@ function checkAlpha(input)
 
 function changeImage()
 {
+    checkImage();
     IMAGE.src = '../images/hangman/hangman' + wrongCounter + '.png';
     if (wrongCounter > 9)
     {
@@ -181,5 +183,17 @@ function clearArray(array)
     while (array.length > 0)
     {
         array.pop();
+    }
+}
+
+function checkImage()
+{
+    if (wrongCounter == 0 || wrongCounter > 9 || isWon == true)
+    {
+    IMAGE.style.visibility = 'hidden';
+    }
+    else
+    {
+    IMAGE.style.visibility = 'visible';
     }
 }
