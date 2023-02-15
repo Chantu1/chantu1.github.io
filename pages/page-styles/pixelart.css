@@ -207,9 +207,11 @@ nav h1 {
 
 #nav-bar {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 25px;
+    color: white;
+    padding-bottom: 25px;
 }
 
 #nav-links {
