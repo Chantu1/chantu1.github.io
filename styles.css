@@ -11,7 +11,7 @@ main {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    min-height: 100vh;
+    min-height: 90vh;
 }
 
 #nav-bar {
@@ -49,6 +49,11 @@ footer {
     align-items: center;
 }
 
+footer h1 {
+    font-size: small;
+    font-weight: 100;
+}
+
 #nav-links a {
     display: inline-flex;
     justify-content: center;
@@ -67,8 +72,4 @@ footer {
     background-color: white;
     color: black;
     transition-duration: 0.5s;
-}
-
-#main-links a {
-
 }
