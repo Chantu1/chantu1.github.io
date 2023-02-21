@@ -10,213 +10,184 @@ const RECENTBTN = document.querySelector('#recentbtn');
 let currentOperator = null;
 let equation = CALCOUTPUT.textContent.split(currentOperator);
 
-NUMBERS.forEach(function(number) {
-    number.addEventListener('click', function() {
+NUMBERS.forEach(function (number) {
+    number.addEventListener('click', function () {
         changeFontSize();
-        if (CALCOUTPUT.textContent == '0' || CALCOUTPUT.textContent == 'Infinity' || CALCOUTPUT.textContent == 'NO')
-        {
+        if (
+            CALCOUTPUT.textContent == '0' ||
+            CALCOUTPUT.textContent == 'Infinity' ||
+            CALCOUTPUT.textContent == 'NO'
+        ) {
             clearDisplay();
             CALCOUTPUT.textContent += number.textContent;
-        }
-        else
-        {
+        } else {
             CALCOUTPUT.textContent += number.textContent;
         }
 
         currentOperator = getOperator();
         equation = CALCOUTPUT.textContent.split(currentOperator);
-        
     });
 });
 
-OPERATORS.forEach(function(operator) {
-    operator.addEventListener('click', function() {
+OPERATORS.forEach(function (operator) {
+    operator.addEventListener('click', function () {
         changeFontSize();
-        if (CALCOUTPUT.textContent == 'Infinity' || CALCOUTPUT.textContent == 'NO')
-        {
+        if (
+            CALCOUTPUT.textContent == 'Infinity' ||
+            CALCOUTPUT.textContent == 'NO'
+        ) {
             clearDisplay();
-        }
-        else
-        {
+        } else {
             removeLastOperator();
-            CALCOUTPUT.textContent = CALCOUTPUT.textContent + operator.textContent;
+            CALCOUTPUT.textContent =
+                CALCOUTPUT.textContent + operator.textContent;
             currentOperator = getOperator();
         }
     });
 });
 
-EQUALBTN.addEventListener('click', function() {
+EQUALBTN.addEventListener('click', function () {
     solveEquation();
     changeFontSize();
 });
 
-CLEARBTN.addEventListener('click', function() {
+CLEARBTN.addEventListener('click', function () {
     changeFontSize();
     CALCOUTPUT.textContent = '0';
     currentOperator = null;
     equation = CALCOUTPUT.textContent.split(currentOperator);
 });
 
-DECIMALBTN.addEventListener('click', function() {
+DECIMALBTN.addEventListener('click', function () {
     changeFontSize();
-    if (CALCOUTPUT.textContent == '0' || CALCOUTPUT.textContent == 'Infinity' || CALCOUTPUT.textContent == 'NO' || CALCOUTPUT.textContent == 'NaN')
-    {
+    if (
+        CALCOUTPUT.textContent == '0' ||
+        CALCOUTPUT.textContent == 'Infinity' ||
+        CALCOUTPUT.textContent == 'NO' ||
+        CALCOUTPUT.textContent == 'NaN'
+    ) {
         clearDisplay();
     }
-    if (equation[1] != undefined && equation[1] != null)
-    {
+    if (equation[1] != undefined && equation[1] != null) {
         removeLastDecimal();
         CALCOUTPUT.textContent += DECIMALBTN.textContent;
-    }
-    else if (currentOperator != undefined || currentOperator != null)
-    {
+    } else if (currentOperator != undefined || currentOperator != null) {
         CALCOUTPUT.textContent += DECIMALBTN.textContent;
-    }
-    else
-    {
+    } else {
         removeLastDecimal();
         CALCOUTPUT.textContent += DECIMALBTN.textContent;
     }
 });
 
-RECENTBTN.addEventListener('click', function() {
+RECENTBTN.addEventListener('click', function () {
     changeFontSize();
-    splittedCALCOUTPUT = CALCOUTPUT.textContent.split("");
+    splittedCALCOUTPUT = CALCOUTPUT.textContent.split('');
     splittedCALCOUTPUT.pop();
-    CALCOUTPUT.textContent = splittedCALCOUTPUT.join("");
+    CALCOUTPUT.textContent = splittedCALCOUTPUT.join('');
 
     currentOperator = getOperator();
     equation = CALCOUTPUT.textContent.split(currentOperator);
 });
 
-function checkNumLength()
-{
-    if (CALCOUTPUT.textContent >= 16)
-    {
-        CALCOUTPUT.style.fontSize = "25px";
-    }
-    else
-    {
-        CALCOUTPUT.style.fontSize = "50px";
+function checkNumLength() {
+    if (CALCOUTPUT.textContent >= 16) {
+        CALCOUTPUT.style.fontSize = '25px';
+    } else {
+        CALCOUTPUT.style.fontSize = '50px';
     }
 }
 
-function removeLastDecimal()
-{
-    if (equation[1] != undefined && equation[1] != NaN)
-    {
+function removeLastDecimal() {
+    if (equation[1] != undefined && equation[1] != NaN) {
         let removeDecimal = null;
         removeDecimal = CALCOUTPUT.textContent.split(currentOperator);
         removeDecimal[1] = removeDecimal[1].replace('.', '');
         removeDecimal.splice(1, 0, currentOperator);
         removeDecimal = removeDecimal.join('');
         CALCOUTPUT.textContent = removeDecimal;
-    }
-    else
-    {
+    } else {
         CALCOUTPUT.textContent = CALCOUTPUT.textContent.replace('.', '');
     }
 }
 
-function checkLength()
-{
+function checkLength() {
     return CALCOUTPUT.textContent.length;
 }
 
-function solveEquation()
-{
+function solveEquation() {
     currentOperator = getOperator();
     equation = CALCOUTPUT.textContent.split(currentOperator);
     equation[0] = parseFloat(equation[0]);
     equation[1] = parseFloat(equation[1]);
 
-    
-    if (currentOperator == '+')
-    {
+    if (currentOperator == '+') {
         CALCOUTPUT.textContent = roundNum(add(equation[0], equation[1]));
-    }
-    else if (currentOperator == '—')
-    {
+    } else if (currentOperator == '—') {
         CALCOUTPUT.textContent = roundNum(subtract(equation[0], equation[1]));
-    }
-    else if (currentOperator == 'X')
-    {
+    } else if (currentOperator == 'X') {
         CALCOUTPUT.textContent = roundNum(multiply(equation[0], equation[1]));
-    }
-    else if (currentOperator == '/')
-    {
-        equation[1] == '0' ? CALCOUTPUT.textContent = 'NO' : CALCOUTPUT.textContent = roundNum(divide(equation[0], equation[1]));
+    } else if (currentOperator == '/') {
+        equation[1] == '0'
+            ? (CALCOUTPUT.textContent = 'NO')
+            : (CALCOUTPUT.textContent = roundNum(
+                  divide(equation[0], equation[1])
+              ));
     }
 
     currentOperator = getOperator();
     equation = CALCOUTPUT.textContent.split(currentOperator);
 }
 
-function clearDisplay()
-{
+function clearDisplay() {
     CALCOUTPUT.textContent = '';
     equation = CALCOUTPUT.textContent.split(currentOperator);
 }
 
-function removeLastOperator()
-{
+function removeLastOperator() {
     solveEquation();
     CALCOUTPUT.textContent = CALCOUTPUT.textContent.replace(/[^0-9.-]/gi, '');
 }
 
-function getOperator()
-{
+function getOperator() {
     let currentOperator = null;
     currentOperator = CALCOUTPUT.textContent.replace(/[^/X+—]/gi, '');
-    if (currentOperator == '')
-    {
+    if (currentOperator == '') {
         return undefined;
     }
     return currentOperator;
 }
 
-function getCurrentEquation()
-{
-    if (equation[1] != null || equation[1] != undefined)
-    {
+function getCurrentEquation() {
+    if (equation[1] != null || equation[1] != undefined) {
         equation = CALCOUTPUT.textContent.split(currentOperator);
     }
     return equation;
 }
 
-function changeFontSize()
-{
-    if (CALCOUTPUT.textContent.length >= 16)
-    {
+function changeFontSize() {
+    if (CALCOUTPUT.textContent.length >= 16) {
         CALCOUTPUT.style.fontSize = '20px';
-    }
-    else
-    {
+    } else {
         CALCOUTPUT.style.fontSize = '30px';
     }
 }
 
-function roundNum(x)
-{
+function roundNum(x) {
     return Math.round(x * 10000000) / 10000000;
 }
 
-function add(a, b)
-{
+function add(a, b) {
     return a + b;
 }
 
-function subtract(a, b)
-{
+function subtract(a, b) {
     return a - b;
 }
 
-function multiply(a, b)
-{
+function multiply(a, b) {
     return a * b;
 }
 
-function divide(a, b)
-{
+function divide(a, b) {
     return a / b;
 }
