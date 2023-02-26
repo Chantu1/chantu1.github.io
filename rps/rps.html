@@ -1,40 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Scissors</title>
-    <link href="./rps.css" rel="stylesheet">
-</head>
-<body>
-    <nav id="nav-bar">
-        <div>
-            <h1>Rock Paper Scissors</h1>
-        </div>
-        <div id="nav-links">
-            <a href="../index.html">Home</a>
-        </div>
-    </nav>
-    <div class="rps-container">
-        <div class="info-box">
-            <p id="currentRound">Round 0</p>
-            <div class="gameScores">
-                <p id="playerScore">Your Score 0/5</p>
-                <p id="enemyScore">Enemy Score 0/5</p>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Rock Paper Scissors</title>
+        <link href="./rps.css" rel="stylesheet" />
+    </head>
+    <body>
+        <nav id="nav-bar">
+            <div>
+                <h1>Rock Paper Scissors</h1>
             </div>
-        </div>
-        <div class="options">
-            <div class="gameButtons">
-                <button class="gamebutton btn-blue" id="rock" value="rock"><div class="sign">&#9994;</div></button>
-                <button class="gamebutton btn-blue" id="paper" value="paper"><div class="sign">&#9995;</div></button>
-                <button class="gamebutton btn-blue" id="scissors" value="scissors"><div class="sign">&#9996;</div></button>
+            <div id="nav-links">
+                <a href="../index.html">Home</a>
             </div>
-            <button class="btn-reset" id="resetGame">Reset</button>
+        </nav>
+        <div class="rps-container">
+            <div class="info-box">
+                <p id="currentRound">Round 0</p>
+                <div class="gameScores">
+                    <p id="playerScore">Your Score 0/5</p>
+                    <p id="enemyScore">Enemy Score 0/5</p>
+                </div>
+            </div>
+            <div class="options">
+                <div class="gameButtons">
+                    <button class="gamebutton btn-blue" id="rock" value="rock">
+                        <div class="sign">&#9994;</div>
+                    </button>
+                    <button
+                        class="gamebutton btn-blue"
+                        id="paper"
+                        value="paper">
+                        <div class="sign">&#9995;</div>
+                    </button>
+                    <button
+                        class="gamebutton btn-blue"
+                        id="scissors"
+                        value="scissors">
+                        <div class="sign">&#9996;</div>
+                    </button>
+                </div>
+                <button class="btn-reset" id="resetGame">Reset</button>
+            </div>
+            <h1 id="roundwinner" hidden>Round Winner:</h1>
+            <h1 id="enemySelection" hidden>Enemy:</h1>
+            <script src="./rps.js"></script>
         </div>
-        <h1 id="roundwinner" hidden>Round Winner: </h1>
-        <h1 id="enemySelection" hidden>Enemy: </h1>
-        <script src="./rps.js"></script>
-    </div>
-</body>
+    </body>
 </html>

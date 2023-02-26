@@ -1,57 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <title>Etch-A-Sketch</title>
-    <link rel="stylesheet" href="./etch-a-sketch.css">
-</head>
-<body>
-    <nav id="nav-bar">
-        <div>
-            <h1>Etch-A-Sketch</h1>
-        </div>
-        <div id="nav-links">
-            <a href="../index.html">Home</a>
-        </div>
-    </nav>
-    <main>
-        <div>
-            <div class="color-picker">
-                <div class="color color-chosen" id="black"></div>
-                <div class="color" id="white"></div>
-                <div class="color" id="red"></div>
-                <div class="color" id="orange"></div>
-                <div class="color" id="yellow"></div>
-                <div class="color" id="green"></div>
-                <div class="color" id="blue"></div>
-                <div class="color" id="indigo"></div>
-                <div class="color" id="violet"></div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <title>Etch-A-Sketch</title>
+        <link rel="stylesheet" href="./etch-a-sketch.css" />
+    </head>
+    <body>
+        <nav id="nav-bar">
+            <div>
+                <h1>Etch-A-Sketch</h1>
             </div>
-        </div>
-        <div id="art-container"></div>
-        <div id="settings">
-            <div id="s">
-                <label>Settings</label>
-                <div id="s-buttons">
-                    <button id="resetbtn">Reset Canvas</button>
-                    <select autocomplete="off" id="input-value" selected="selected">
-                        <option selected value="500">Small</option>
-                        <option value="2500">Medium</option>
-                        <option value="10000">Large</option>
-                    </select>
+            <div id="nav-links">
+                <a href="../index.html">Home</a>
+            </div>
+        </nav>
+        <main>
+            <div>
+                <div class="color-picker">
+                    <div class="color color-chosen" id="black"></div>
+                    <div class="color" id="white"></div>
+                    <div class="color" id="red"></div>
+                    <div class="color" id="orange"></div>
+                    <div class="color" id="yellow"></div>
+                    <div class="color" id="green"></div>
+                    <div class="color" id="blue"></div>
+                    <div class="color" id="indigo"></div>
+                    <div class="color" id="violet"></div>
                 </div>
             </div>
-            <div id="cc">
-                <label>Custom Colors</label>
-                <div id="cc-buttons">
-                    <div id="rainbow">Rainbow</div>
-                    <!--<button id="shaders">Temp Button</button>-->
+            <div id="art-container"></div>
+            <div id="settings">
+                <div id="s">
+                    <label>Settings</label>
+                    <div id="s-buttons">
+                        <button id="resetbtn">Reset Canvas</button>
+                        <select
+                            autocomplete="off"
+                            id="input-value"
+                            selected="selected">
+                            <option selected value="500">Small</option>
+                            <option value="2500">Medium</option>
+                            <option value="10000">Large</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="cc">
+                    <label>Custom Colors</label>
+                    <div id="cc-buttons">
+                        <div id="rainbow">Rainbow</div>
+                        <!--<button id="shaders">Temp Button</button>-->
+                    </div>
                 </div>
             </div>
-        </div>
-    </main>
-</body>
-<script src="./etch-a-sketch.js"></script>
+        </main>
+    </body>
+    <script src="./etch-a-sketch.js"></script>
 </html>

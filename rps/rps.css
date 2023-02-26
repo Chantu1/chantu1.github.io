@@ -28,7 +28,7 @@ p {
     flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
-    gap:25px;
+    gap: 25px;
 }
 
 .info-box p {
@@ -107,13 +107,21 @@ p {
 
 .btn-blue {
     /*background-color: rgb(71, 123, 255);*/
-    background-image: linear-gradient(to right, rgb(255, 255, 255), rgb(246, 246, 255));
+    background-image: linear-gradient(
+        to right,
+        rgb(255, 255, 255),
+        rgb(246, 246, 255)
+    );
     border-radius: 15px;
     border: 2px solid black;
 }
 
 .btn-blue:hover {
-    background-image: linear-gradient(to right, rgb(100, 100, 255), rgb(55, 55, 255));
+    background-image: linear-gradient(
+        to right,
+        rgb(100, 100, 255),
+        rgb(55, 55, 255)
+    );
 }
 
 .sign {
@@ -168,7 +176,7 @@ p {
     background-color: #240090;
     font-weight: 600;
     transition-duration: 750ms;
-    box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.75);
 }
 
 #nav-links a:hover {

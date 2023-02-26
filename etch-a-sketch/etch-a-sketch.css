@@ -15,7 +15,6 @@ main {
     justify-content: center;
     align-items: center;
     gap: 15px;
-    
 }
 
 #art-container {
@@ -25,11 +24,13 @@ main {
     width: 500px;
     height: 500px;
     overflow: hidden;
-    box-shadow: 0px 0px 25px -10px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.75);
     background-color: white;
 }
 
-.boxSize1, .boxSize2, .boxSize3 {
+.boxSize1,
+.boxSize2,
+.boxSize3 {
     user-select: none;
 }
 
@@ -58,8 +59,6 @@ main {
     display: flex;
     flex-direction: row;
 }
-
-
 
 .color-picker div {
     min-width: 15px;
@@ -137,7 +136,8 @@ select option {
 
 /*reset button*/
 
-#resetbtn, #shaders {
+#resetbtn,
+#shaders {
     padding: 5px;
     box-shadow: none;
     border-radius: 25px;
@@ -150,7 +150,16 @@ select option {
 #rainbow {
     padding: 5px;
     display: inline;
-    background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    background-image: linear-gradient(
+        to right,
+        red,
+        orange,
+        yellow,
+        green,
+        blue,
+        indigo,
+        violet
+    );
     cursor: pointer;
     position: relative;
     border-radius: 25px;
@@ -170,16 +179,27 @@ select option {
 #rainbow:after {
     content: '';
     position: absolute;
-    background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    background-image: linear-gradient(
+        to right,
+        red,
+        orange,
+        yellow,
+        green,
+        blue,
+        indigo,
+        violet
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transform: translate(-50%, -50%);
     top: 50%;
-    left: 50%;    
+    left: 50%;
 }
 
 @keyframes move {
-    to {background-position: 100vh;}
+    to {
+        background-position: 100vh;
+    }
 }
 
 #rainbow:hover {
@@ -193,7 +213,7 @@ select option {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    box-shadow: 0px 0px 25px -10px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.75);
     background-color: white;
     flex-wrap: wrap;
     padding: 5px;
@@ -233,7 +253,7 @@ nav h1 {
     background-color: #240090;
     font-weight: 600;
     transition-duration: 750ms;
-    box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.75);
 }
 
 #nav-links a:hover {
@@ -247,12 +267,14 @@ label {
     padding: 5px 0px 5px 0px;
 }
 
-#cc, #s {
+#cc,
+#s {
     display: flex;
     flex-direction: column;
 }
 
-#cc-buttons, #s-buttons {
+#cc-buttons,
+#s-buttons {
     display: flex;
     justify-content: center;
 }
