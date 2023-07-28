@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* project card container */
+.project-card-container {
+	@apply grid grid-cols-projectCard gap-normal rounded-md border border-black dark:border-white;
+}
+.project-card-image {
+	@apply object-cover h-full w-full max-h-52;
+}
+.project-card-details-container {
+	@apply flex flex-col gap-normal p-normal;
+}
+
+.project-card-details-container h2 {
+	@apply h2;
+}
+.project-card-details-container a {
+	@apply anchor;
+}
+.project-card-links-container {
+	@apply flex mt-auto gap-normal;
+}
+
+/* misc */
+body {
+	@apply dark:bg-black;
+}
