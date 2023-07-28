@@ -15,7 +15,7 @@
 		<div class="project-card-container">
 			<img class="project-card-image" src={libraryImg} alt="Library app" />
 			<div class="project-card-details-container">
-				<h2>Library</h2>
+				<h2 class="h2">Library</h2>
 				<p>A place to store your book information. Built with React and Firebase.</p>
 				<div class="project-card-links-container">
 					<a href="https://library-17792.web.app/" target="_blank"><ExternalLink /></a>
@@ -26,7 +26,7 @@
 		<div class="project-card-container">
 			<img class="project-card-image" src={minesweeperImg} alt="Minesweeper" />
 			<div class="project-card-details-container">
-				<h2>Minesweeper</h2>
+				<h2 class="h2">Minesweeper</h2>
 				<p>A simple recreation of minesweeper. Built with Svelte.</p>
 				<div class="project-card-links-container">
 					<a href="https://thechantu.github.io/minesweeper/" target="_blank"><ExternalLink /></a>
@@ -37,7 +37,7 @@
 		<div class="project-card-container">
 			<img class="project-card-image" src={chessImg} alt="Chess" />
 			<div class="project-card-details-container">
-				<h2>Chess</h2>
+				<h2 class="h2">Chess</h2>
 				<p>A simple recreation of chess, with a not so great AI. Built with React.</p>
 				<div class="project-card-links-container">
 					<a href="https://thechantu.github.io/chess/" target="_blank"><ExternalLink /></a>
@@ -48,7 +48,7 @@
 		<div class="project-card-container">
 			<img class="project-card-image" src={tictactoeImg} alt="Tic Tac Toe" />
 			<div class="project-card-details-container">
-				<h2>Tic Tac Toe</h2>
+				<h2 class="h2">Tic Tac Toe</h2>
 				<p>A simple recreation of Tic Tac Toe, with a decent AI. Built with React.</p>
 				<div class="project-card-links-container">
 					<a href="https://thechantu.github.io/tictactoe/" target="_blank"><ExternalLink /></a>
