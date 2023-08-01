@@ -8,7 +8,7 @@
 
 <svelte:head>
 	<title>Jonathan Small</title>
-	<meta name="description" content="Svelte demo app" />
+	<meta name="description" content="A portfolio" />
 </svelte:head>
 
 <Header />

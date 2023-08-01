@@ -1,7 +1,16 @@
+<script lang="ts">
+	import { Github } from 'lucide-svelte';
+</script>
+
 <div
-	class="h-screen flex flex-col justify-center items-center p-normal dark:text-white"
+	class="h-screen flex flex-col gap-normal justify-center items-center p-normal dark:text-white"
 	id="contact"
 >
-	<h1 class="h1">Contact</h1>
-	<a href="mailto:jonmsmall1030@gmail.com">jonmsmall1030@gmail.com</a>
+	<div class="flex flex-col gap-normal justify-center items-center">
+		<h1 class="h1 font-bold">Contact</h1>
+		<p>Here are some ways you can find me.</p>
+	</div>
+	<a href="https://github.com/theChantu" target="_blank" class="btn variant-filled-primary">
+		<span><Github /></span>
+	</a>
 </div>

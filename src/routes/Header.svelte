@@ -14,7 +14,7 @@
 
 <div id="header">
 	<nav
-		class="fixed top-0 w-full flex justify-between bg-white dark:bg-primary p-normal shadow-md dark:shadow-dark"
+		class="fixed top-0 w-full flex justify-between variant-filled-surface dark:bg-primary p-normal shadow-md dark:shadow-dark z-50"
 	>
 		<h1 class="dark:text-white font-semibold">Jonathan</h1>
 		<div class="flex gap-normal">

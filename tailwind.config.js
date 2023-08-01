@@ -7,9 +7,11 @@ export default {
 	],
 	theme: {
 		extend: {
-			colors: {
-				primary: '#101010e6'
-			},
+			// colors: {
+			// 	primary: '#101010e6',
+			// 	darkPurple: '#141c3a',
+			// 	lightPurple: '#6e07f3'
+			// },
 			padding: {
 				normal: '15px'
 			},
@@ -21,6 +23,12 @@ export default {
 			},
 			gridTemplateColumns: {
 				projectCard: '1fr 65%'
+			},
+			borderRadius: {
+				high: '50px'
+			},
+			minWidth: {
+				project: '450px'
 			}
 		}
 	},
