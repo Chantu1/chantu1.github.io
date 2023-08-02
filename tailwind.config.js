@@ -28,7 +28,8 @@ export default {
 				high: '50px'
 			},
 			minWidth: {
-				project: '450px'
+				// TODO: Make higher on larger screens
+				project: '300px'
 			}
 		}
 	},

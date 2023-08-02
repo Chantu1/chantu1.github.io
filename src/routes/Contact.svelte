@@ -3,7 +3,7 @@
 </script>
 
 <div
-	class="h-screen flex flex-col gap-normal justify-center items-center p-normal dark:text-white"
+	class="min-h-screen flex flex-col gap-normal justify-center items-center p-normal dark:text-white"
 	id="contact"
 >
 	<div class="flex flex-col gap-normal justify-center items-center">

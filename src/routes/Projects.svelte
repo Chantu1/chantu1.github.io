@@ -8,7 +8,7 @@
 </script>
 
 <div
-	class="h-screen flex flex-col justify-center items-center p-normal gap-normal dark:text-white"
+	class="min-h-screen flex flex-col justify-center items-center p-normal gap-normal dark:text-white"
 	id="projects"
 >
 	<div class="flex flex-col gap-normal justify-center items-center">
