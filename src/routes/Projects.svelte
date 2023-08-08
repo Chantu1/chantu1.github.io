@@ -7,15 +7,12 @@
 	import Project from '../components/Project.svelte';
 </script>
 
-<div
-	class="min-h-screen flex flex-col justify-center items-center p-normal gap-normal dark:text-white"
-	id="projects"
->
+<div class="min-h-screen flex flex-col justify-center items-center gap-normal" id="projects">
 	<div class="flex flex-col gap-normal justify-center items-center">
 		<h1 class="h1 font-bold">Projects</h1>
 		<p>Here is a few of the projects I have worked on.</p>
 	</div>
-	<div class="flex flex-wrap gap-normal w-full">
+	<div class="flex flex-wrap gap-normal w-full p-normal variant-filled-primary">
 		<Project
 			image={libraryImg}
 			href="https://library-17792.web.app/"

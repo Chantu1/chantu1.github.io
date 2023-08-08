@@ -15,14 +15,14 @@
 		alt=""
 	/>
 	<div
-		class="flex flex-col gap-normal p-normal text-center bg-white absolute inset-0 opacity-0 group-hover:opacity-100 bg-darkPurple justify-center items-center transition ease-in duration-300"
+		class="flex flex-col gap-normal p-normal text-center variant-filled-surface absolute inset-0 opacity-0 group-hover:opacity-100 bg-darkPurple justify-center items-center transition ease-in duration-300"
 	>
 		<p class="text-black text-xl">
 			{description}
 		</p>
 		<a class="btn variant-filled-primary" {href} target="_blank">
 			<span class="font-semibold text-lg">Preview</span>
-			<span><ExternalLink /></span>
+			<!-- <span><ExternalLink /></span> -->
 		</a>
 	</div>
 </div>

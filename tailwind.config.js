@@ -7,6 +7,9 @@ export default {
 	],
 	theme: {
 		extend: {
+			colors: {
+				project: '#141c3a'
+			},
 			padding: {
 				normal: '15px'
 			},

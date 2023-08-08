@@ -4,4 +4,8 @@
 	export let title: string;
 </script>
 
-<a class="dark:text-white font-semibold" {href} on:click|preventDefault={scrollIntoView}>{title}</a>
+<a
+	class="header-link text-white font-semibold select-none"
+	{href}
+	on:click|preventDefault={scrollIntoView}>{title}</a
+>
