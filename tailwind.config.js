@@ -7,11 +7,6 @@ export default {
 	],
 	theme: {
 		extend: {
-			// colors: {
-			// 	primary: '#101010e6',
-			// 	darkPurple: '#141c3a',
-			// 	lightPurple: '#6e07f3'
-			// },
 			padding: {
 				normal: '15px'
 			},

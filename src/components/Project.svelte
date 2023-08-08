@@ -21,7 +21,7 @@
 			{description}
 		</p>
 		<a class="btn variant-filled-primary" {href} target="_blank">
-			<span class="font-bold text-lg">Preview</span>
+			<span class="font-semibold text-lg">Preview</span>
 			<span><ExternalLink /></span>
 		</a>
 	</div>
