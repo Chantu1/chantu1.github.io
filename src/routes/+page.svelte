@@ -4,6 +4,7 @@
 	import Header from './Header.svelte';
 	import Home from './Home.svelte';
 	import Contact from './Contact.svelte';
+	import Footer from './Footer.svelte';
 </script>
 
 <svelte:head>
@@ -15,3 +16,4 @@
 <Home />
 <Projects />
 <Contact />
+<Footer />
