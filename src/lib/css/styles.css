@@ -22,3 +22,81 @@
 .header-link:hover::after {
 	transform: scaleX(1);
 }
+
+/* .typewriter {
+	overflow: hidden;
+	border-right: 0.15em solid #6e07f3;
+	white-space: nowrap;
+	animation: typing 2.25s steps(40, end), blink-caret 1s step-end infinite;
+}
+
+@keyframes typing {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
+	}
+}
+
+@keyframes blink-caret {
+	from,
+	to {
+		border-color: transparent;
+	}
+	50% {
+		border-color: #6e07f3;
+	}
+} */
+
+#name-header {
+	position: relative;
+}
+
+#name-header::before,
+#name-header::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+#name-header::before {
+	background-color: white;
+	animation: typewriter 4s steps(14) 2.5s forwards;
+}
+
+#name-header::after {
+	width: 0.125em;
+	background-color: #6e07f3;
+	animation: typewriter 4s steps(14) 2.5s forwards, blink 1s steps(24) infinite;
+}
+
+p {
+	animation: fade-in-upwards 3s ease-in forwards;
+}
+
+@keyframes typewriter {
+	to {
+		left: 100%;
+	}
+}
+
+@keyframes blink {
+	to {
+		background: transparent;
+	}
+}
+
+@keyframes fade-in-upwards {
+	from {
+		opacity: 0;
+		transform: translateY(1rem);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
